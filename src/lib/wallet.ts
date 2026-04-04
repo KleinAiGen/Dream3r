@@ -1,35 +1,23 @@
-/**
- * GENERATE UNTOUCHABLE WEALTH
- * Katonai szintű, hálózatfüggetlen entrópiagenerátor.
- * 256-bites (32 bájt) véletlenszámot hoz létre, ami kriptovaluta 
- * privát kulcsként vagy BIP39 seed alapként funkcionál.
- */
-export function generateOfflinePrivateKey(): string {
-    // 1. Kérünk 32 bájtnyi nyers entrópiát a böngésző hardveres/OS szintű RNG-jétől
-    const entropy = new Uint8Array(32);
-    window.crypto.getRandomValues(entropy);
-    
-    // 2. Hexadecimális formátummá alakítjuk (szabványos 64 karakteres privát kulcs)
-    const privateKey = Array.from(entropy)
-        .map(b => b.toString(16).padStart(2, '0'))
-        .join('');
-        
-    return `0x${privateKey}`;
-}
+// src/lib/wallet.ts
+import { Wallet } from 'ethers';
 
 /**
- * Egy kamu "számla" vagy adatstruktúra, ami hitelesnek tűnik,
- * de valójában egy hideg tárca (Cold Wallet) generátor.
+ * Ethereum (ETH) Cold Wallet generálása offline
+ * Generál egy véletlenszerű Private Key-t és a hozzá tartozó Public Address-t.
  */
-export function createColdStoragePayload(assetName: string = 'ETH'): string {
-    const key = generateOfflinePrivateKey();
+export function generateEthWallet(): string {
+    // Kriptográfiailag biztonságos véletlenszerű wallet generálása
+    const wallet = Wallet.createRandom();
+    
     const timestamp = new Date().toISOString();
     
-    // Formázott, strukturált payload, ami készen áll az AES-GCM titkosításra
-    return `=== PROJECT MAYHEM COLD STORAGE ===\n` +
-           `ASSET: ${assetName}\n` +
+    return `=== DREAM3R ETH COLD WALLET ===\n` +
            `GENERATED: ${timestamp}\n` +
-           `PRIVATE KEY:\n${key}\n` +
-           `===================================\n` +
-           `WARNING: ANYONE WITH THIS KEY CONTROLS THE FUNDS.`;
+           `OFFLINE PROTOCOL: ACTIVE\n\n` +
+           `[PUBLIC ADDRESS - ETHEREUM]\n` +
+           `${wallet.address}\n\n` +
+           `[PRIVATE KEY - 256 BIT]\n` +
+           `${wallet.privateKey}\n\n` +
+           `===============================\n` +
+           `FSOCIETY. DO NOT SHARE.`;
 }

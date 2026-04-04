@@ -1,47 +1,104 @@
-const SUBJECTS = [
-    "A brutalist concrete server room",
-    "An abandoned subway station reclaimed by nature",
-    "A macro close-up of a damaged microchip",
-    "A lone figure standing in a neon-lit alleyway",
-    "A minimalist architectural structure in the desert",
-    "A dense foggy forest at twilight",
-    "An old CRT monitor displaying static",
-    "A highly detailed mechanical watch interior",
-    "A vast, empty library with floating dust particles"
-];
-
-const ATMOSPHERES = [
-    "covered in thick, mysterious fog",
-    "bathed in bioluminescent glow",
-    "during a heavy, cinematic rainstorm",
-    "in absolute, terrifying darkness",
-    "illuminated by harsh fluorescent lights",
-    "with a cyberpunk, dystopian vibe"
-];
-
-const LIGHTING = [
-    "dramatic volumetric lighting",
-    "neon pink and cyan reflections",
-    "harsh shadows and high contrast",
-    "soft ambient overcast light",
-    "cinematic rim lighting"
-];
-
-const STYLES = [
-    "shot on Kodak Portra 400",
-    "Unreal Engine 5 architectural render",
-    "glitch art aesthetic",
-    "1980s VHS tape quality",
-    "hyper-realistic photogrammetry",
-    "noir detective film style",
-    "cyberpunk digital illustration"
-];
-
-const TECHNICAL = [
-    "8k resolution, highly detailed",
-    "macro photography, deep depth of field",
-    "wide angle lens, geometric symmetry",
-    "cinematic composition, masterpiece"
+const GHOST_PROMPTS = [
+    "A brutalist concrete server room covered in thick, mysterious fog, dramatic volumetric lighting, shot on Kodak Portra 400, 8k resolution, highly detailed.",
+    "An abandoned subway station reclaimed by nature, bathed in bioluminescent glow, neon pink and cyan reflections, Unreal Engine 5 architectural render, macro photography, deep depth of field.",
+    "A macro close-up of a damaged microchip, during a heavy, cinematic rainstorm, harsh shadows and high contrast, glitch art aesthetic, wide angle lens, geometric symmetry.",
+    "A lone figure standing in a neon-lit alleyway, in absolute, terrifying darkness, soft ambient overcast light, 1980s VHS tape quality, cinematic composition, masterpiece.",
+    "A minimalist architectural structure in the desert, illuminated by harsh fluorescent lights, cinematic rim lighting, hyper-realistic photogrammetry, 8k resolution, highly detailed.",
+    "A dense foggy forest at twilight, with a cyberpunk, dystopian vibe, dramatic volumetric lighting, noir detective film style, macro photography, deep depth of field.",
+    "An old CRT monitor displaying static, covered in thick, mysterious fog, neon pink and cyan reflections, cyberpunk digital illustration, wide angle lens, geometric symmetry.",
+    "A highly detailed mechanical watch interior, bathed in bioluminescent glow, harsh shadows and high contrast, shot on Kodak Portra 400, cinematic composition, masterpiece.",
+    "A vast, empty library with floating dust particles, during a heavy, cinematic rainstorm, soft ambient overcast light, Unreal Engine 5 architectural render, 8k resolution, highly detailed.",
+    "A futuristic cityscape reflected in a puddle, in absolute, terrifying darkness, cinematic rim lighting, glitch art aesthetic, macro photography, deep depth of field.",
+    "A shattered glass window with neon lights behind it, illuminated by harsh fluorescent lights, dramatic volumetric lighting, 1980s VHS tape quality, wide angle lens, geometric symmetry.",
+    "A solitary glowing tree in a barren wasteland, with a cyberpunk, dystopian vibe, neon pink and cyan reflections, hyper-realistic photogrammetry, cinematic composition, masterpiece.",
+    "A close-up of a human eye with digital data overlays, covered in thick, mysterious fog, harsh shadows and high contrast, noir detective film style, 8k resolution, highly detailed.",
+    "A floating island made of geometric shapes, bathed in bioluminescent glow, soft ambient overcast light, cyberpunk digital illustration, macro photography, deep depth of field.",
+    "A vintage typewriter with glowing keys, during a heavy, cinematic rainstorm, cinematic rim lighting, shot on Kodak Portra 400, wide angle lens, geometric symmetry.",
+    "A massive underground cavern with glowing crystals, in absolute, terrifying darkness, dramatic volumetric lighting, Unreal Engine 5 architectural render, cinematic composition, masterpiece.",
+    "A robotic hand holding a fragile flower, illuminated by harsh fluorescent lights, neon pink and cyan reflections, glitch art aesthetic, 8k resolution, highly detailed.",
+    "A surreal landscape with floating spheres, with a cyberpunk, dystopian vibe, harsh shadows and high contrast, 1980s VHS tape quality, macro photography, deep depth of field.",
+    "A close-up of a vinyl record playing, covered in thick, mysterious fog, soft ambient overcast light, hyper-realistic photogrammetry, wide angle lens, geometric symmetry.",
+    "A glowing portal in the middle of a dark forest, bathed in bioluminescent glow, cinematic rim lighting, noir detective film style, cinematic composition, masterpiece.",
+    "A futuristic train speeding through a neon tunnel, during a heavy, cinematic rainstorm, dramatic volumetric lighting, cyberpunk digital illustration, 8k resolution, highly detailed.",
+    "A close-up of a circuit board with glowing traces, in absolute, terrifying darkness, neon pink and cyan reflections, shot on Kodak Portra 400, macro photography, deep depth of field.",
+    "A massive, abandoned satellite dish, illuminated by harsh fluorescent lights, harsh shadows and high contrast, Unreal Engine 5 architectural render, wide angle lens, geometric symmetry.",
+    "A solitary figure walking on a glowing path, with a cyberpunk, dystopian vibe, soft ambient overcast light, glitch art aesthetic, cinematic composition, masterpiece.",
+    "A close-up of a neon sign buzzing, covered in thick, mysterious fog, cinematic rim lighting, 1980s VHS tape quality, 8k resolution, highly detailed.",
+    "A surreal cityscape with upside-down buildings, bathed in bioluminescent glow, dramatic volumetric lighting, hyper-realistic photogrammetry, macro photography, deep depth of field.",
+    "A glowing orb floating over a calm lake, during a heavy, cinematic rainstorm, neon pink and cyan reflections, noir detective film style, wide angle lens, geometric symmetry.",
+    "A close-up of a mechanical eye, in absolute, terrifying darkness, harsh shadows and high contrast, cyberpunk digital illustration, cinematic composition, masterpiece.",
+    "A massive, futuristic dam, illuminated by harsh fluorescent lights, soft ambient overcast light, shot on Kodak Portra 400, 8k resolution, highly detailed.",
+    "A solitary figure standing on a glowing bridge, with a cyberpunk, dystopian vibe, cinematic rim lighting, Unreal Engine 5 architectural render, macro photography, deep depth of field.",
+    "A close-up of a glowing mushroom, covered in thick, mysterious fog, dramatic volumetric lighting, glitch art aesthetic, wide angle lens, geometric symmetry.",
+    "A surreal landscape with giant floating cubes, bathed in bioluminescent glow, neon pink and cyan reflections, 1980s VHS tape quality, cinematic composition, masterpiece.",
+    "A glowing doorway in a dark alley, during a heavy, cinematic rainstorm, harsh shadows and high contrast, hyper-realistic photogrammetry, 8k resolution, highly detailed.",
+    "A close-up of a futuristic weapon, in absolute, terrifying darkness, soft ambient overcast light, noir detective film style, macro photography, deep depth of field.",
+    "A massive, abandoned factory, illuminated by harsh fluorescent lights, cinematic rim lighting, cyberpunk digital illustration, wide angle lens, geometric symmetry.",
+    "A solitary figure looking at a glowing city, with a cyberpunk, dystopian vibe, dramatic volumetric lighting, shot on Kodak Portra 400, cinematic composition, masterpiece.",
+    "A close-up of a glowing crystal, covered in thick, mysterious fog, neon pink and cyan reflections, Unreal Engine 5 architectural render, 8k resolution, highly detailed.",
+    "A surreal landscape with floating pyramids, bathed in bioluminescent glow, harsh shadows and high contrast, glitch art aesthetic, macro photography, deep depth of field.",
+    "A glowing path through a dark forest, during a heavy, cinematic rainstorm, soft ambient overcast light, 1980s VHS tape quality, wide angle lens, geometric symmetry.",
+    "A close-up of a futuristic helmet, in absolute, terrifying darkness, cinematic rim lighting, hyper-realistic photogrammetry, cinematic composition, masterpiece.",
+    "A massive, glowing monolith, illuminated by harsh fluorescent lights, dramatic volumetric lighting, noir detective film style, 8k resolution, highly detailed.",
+    "A solitary figure standing in a glowing field, with a cyberpunk, dystopian vibe, neon pink and cyan reflections, cyberpunk digital illustration, macro photography, deep depth of field.",
+    "A close-up of a glowing flower, covered in thick, mysterious fog, harsh shadows and high contrast, shot on Kodak Portra 400, wide angle lens, geometric symmetry.",
+    "A surreal landscape with floating rings, bathed in bioluminescent glow, soft ambient overcast light, Unreal Engine 5 architectural render, cinematic composition, masterpiece.",
+    "A glowing portal in a dark cave, during a heavy, cinematic rainstorm, cinematic rim lighting, glitch art aesthetic, 8k resolution, highly detailed.",
+    "A close-up of a futuristic vehicle, in absolute, terrifying darkness, dramatic volumetric lighting, 1980s VHS tape quality, macro photography, deep depth of field.",
+    "A massive, glowing tower, illuminated by harsh fluorescent lights, neon pink and cyan reflections, hyper-realistic photogrammetry, wide angle lens, geometric symmetry.",
+    "A solitary figure looking at a glowing sky, with a cyberpunk, dystopian vibe, harsh shadows and high contrast, noir detective film style, cinematic composition, masterpiece.",
+    "A close-up of a glowing insect, covered in thick, mysterious fog, soft ambient overcast light, cyberpunk digital illustration, 8k resolution, highly detailed.",
+    "A surreal landscape with floating islands, bathed in bioluminescent glow, cinematic rim lighting, shot on Kodak Portra 400, macro photography, deep depth of field.",
+    "A glowing path through a dark city, during a heavy, cinematic rainstorm, dramatic volumetric lighting, Unreal Engine 5 architectural render, wide angle lens, geometric symmetry.",
+    "A close-up of a futuristic drone, in absolute, terrifying darkness, neon pink and cyan reflections, glitch art aesthetic, cinematic composition, masterpiece.",
+    "A massive, glowing sphere, illuminated by harsh fluorescent lights, harsh shadows and high contrast, 1980s VHS tape quality, 8k resolution, highly detailed.",
+    "A solitary figure standing on a glowing mountain, with a cyberpunk, dystopian vibe, soft ambient overcast light, hyper-realistic photogrammetry, macro photography, deep depth of field.",
+    "A close-up of a glowing leaf, covered in thick, mysterious fog, cinematic rim lighting, noir detective film style, wide angle lens, geometric symmetry.",
+    "A surreal landscape with floating crystals, bathed in bioluminescent glow, dramatic volumetric lighting, cyberpunk digital illustration, cinematic composition, masterpiece.",
+    "A glowing portal in a dark room, during a heavy, cinematic rainstorm, neon pink and cyan reflections, shot on Kodak Portra 400, 8k resolution, highly detailed.",
+    "A close-up of a futuristic robot, in absolute, terrifying darkness, harsh shadows and high contrast, Unreal Engine 5 architectural render, macro photography, deep depth of field.",
+    "A massive, glowing pyramid, illuminated by harsh fluorescent lights, soft ambient overcast light, glitch art aesthetic, wide angle lens, geometric symmetry.",
+    "A solitary figure looking at a glowing ocean, with a cyberpunk, dystopian vibe, cinematic rim lighting, 1980s VHS tape quality, cinematic composition, masterpiece.",
+    "A close-up of a glowing drop of water, covered in thick, mysterious fog, dramatic volumetric lighting, hyper-realistic photogrammetry, 8k resolution, highly detailed.",
+    "A surreal landscape with floating trees, bathed in bioluminescent glow, neon pink and cyan reflections, noir detective film style, macro photography, deep depth of field.",
+    "A glowing path through a dark desert, during a heavy, cinematic rainstorm, harsh shadows and high contrast, cyberpunk digital illustration, wide angle lens, geometric symmetry.",
+    "A close-up of a futuristic interface, in absolute, terrifying darkness, soft ambient overcast light, shot on Kodak Portra 400, cinematic composition, masterpiece.",
+    "A massive, glowing cube, illuminated by harsh fluorescent lights, cinematic rim lighting, Unreal Engine 5 architectural render, 8k resolution, highly detailed.",
+    "A solitary figure standing on a glowing cloud, with a cyberpunk, dystopian vibe, dramatic volumetric lighting, glitch art aesthetic, macro photography, deep depth of field.",
+    "A close-up of a glowing feather, covered in thick, mysterious fog, neon pink and cyan reflections, 1980s VHS tape quality, wide angle lens, geometric symmetry.",
+    "A surreal landscape with floating rocks, bathed in bioluminescent glow, harsh shadows and high contrast, hyper-realistic photogrammetry, cinematic composition, masterpiece.",
+    "A glowing portal in a dark sky, during a heavy, cinematic rainstorm, soft ambient overcast light, noir detective film style, 8k resolution, highly detailed.",
+    "A close-up of a futuristic city, in absolute, terrifying darkness, cinematic rim lighting, cyberpunk digital illustration, macro photography, deep depth of field.",
+    "A massive, glowing ring, illuminated by harsh fluorescent lights, dramatic volumetric lighting, shot on Kodak Portra 400, wide angle lens, geometric symmetry.",
+    "A solitary figure looking at a glowing star, with a cyberpunk, dystopian vibe, neon pink and cyan reflections, Unreal Engine 5 architectural render, cinematic composition, masterpiece.",
+    "A close-up of a glowing eye, covered in thick, mysterious fog, harsh shadows and high contrast, glitch art aesthetic, 8k resolution, highly detailed.",
+    "A surreal landscape with floating clouds, bathed in bioluminescent glow, soft ambient overcast light, 1980s VHS tape quality, macro photography, deep depth of field.",
+    "A glowing path through a dark canyon, during a heavy, cinematic rainstorm, cinematic rim lighting, hyper-realistic photogrammetry, wide angle lens, geometric symmetry.",
+    "A close-up of a futuristic landscape, in absolute, terrifying darkness, dramatic volumetric lighting, noir detective film style, cinematic composition, masterpiece.",
+    "A massive, glowing star, illuminated by harsh fluorescent lights, neon pink and cyan reflections, cyberpunk digital illustration, 8k resolution, highly detailed.",
+    "A solitary figure standing on a glowing planet, with a cyberpunk, dystopian vibe, harsh shadows and high contrast, shot on Kodak Portra 400, macro photography, deep depth of field.",
+    "A close-up of a glowing heart, covered in thick, mysterious fog, soft ambient overcast light, Unreal Engine 5 architectural render, wide angle lens, geometric symmetry.",
+    "A surreal landscape with floating planets, bathed in bioluminescent glow, cinematic rim lighting, glitch art aesthetic, cinematic composition, masterpiece.",
+    "A glowing portal in a dark galaxy, during a heavy, cinematic rainstorm, dramatic volumetric lighting, 1980s VHS tape quality, 8k resolution, highly detailed.",
+    "A close-up of a futuristic galaxy, in absolute, terrifying darkness, neon pink and cyan reflections, hyper-realistic photogrammetry, macro photography, deep depth of field.",
+    "A massive, glowing galaxy, illuminated by harsh fluorescent lights, harsh shadows and high contrast, noir detective film style, wide angle lens, geometric symmetry.",
+    "A solitary figure looking at a glowing universe, with a cyberpunk, dystopian vibe, soft ambient overcast light, cyberpunk digital illustration, cinematic composition, masterpiece.",
+    "A close-up of a glowing brain, covered in thick, mysterious fog, cinematic rim lighting, shot on Kodak Portra 400, 8k resolution, highly detailed.",
+    "A surreal landscape with floating galaxies, bathed in bioluminescent glow, dramatic volumetric lighting, Unreal Engine 5 architectural render, macro photography, deep depth of field.",
+    "A glowing path through a dark universe, during a heavy, cinematic rainstorm, neon pink and cyan reflections, glitch art aesthetic, wide angle lens, geometric symmetry.",
+    "A close-up of a futuristic universe, in absolute, terrifying darkness, harsh shadows and high contrast, 1980s VHS tape quality, cinematic composition, masterpiece.",
+    "A massive, glowing universe, illuminated by harsh fluorescent lights, soft ambient overcast light, hyper-realistic photogrammetry, 8k resolution, highly detailed.",
+    "A solitary figure standing on a glowing universe, with a cyberpunk, dystopian vibe, cinematic rim lighting, noir detective film style, macro photography, deep depth of field.",
+    "A close-up of a glowing soul, covered in thick, mysterious fog, dramatic volumetric lighting, cyberpunk digital illustration, wide angle lens, geometric symmetry.",
+    "A surreal landscape with floating universes, bathed in bioluminescent glow, neon pink and cyan reflections, shot on Kodak Portra 400, cinematic composition, masterpiece.",
+    "A glowing portal in a dark multiverse, during a heavy, cinematic rainstorm, harsh shadows and high contrast, Unreal Engine 5 architectural render, 8k resolution, highly detailed.",
+    "A close-up of a futuristic multiverse, in absolute, terrifying darkness, soft ambient overcast light, glitch art aesthetic, macro photography, deep depth of field.",
+    "A massive, glowing multiverse, illuminated by harsh fluorescent lights, cinematic rim lighting, 1980s VHS tape quality, wide angle lens, geometric symmetry.",
+    "A solitary figure looking at a glowing multiverse, with a cyberpunk, dystopian vibe, dramatic volumetric lighting, hyper-realistic photogrammetry, cinematic composition, masterpiece.",
+    "A close-up of a glowing spirit, covered in thick, mysterious fog, neon pink and cyan reflections, noir detective film style, 8k resolution, highly detailed.",
+    "A surreal landscape with floating multiverses, bathed in bioluminescent glow, harsh shadows and high contrast, cyberpunk digital illustration, macro photography, deep depth of field.",
+    "A glowing path through a dark omniverse, during a heavy, cinematic rainstorm, soft ambient overcast light, shot on Kodak Portra 400, wide angle lens, geometric symmetry.",
+    "A close-up of a futuristic omniverse, in absolute, terrifying darkness, cinematic rim lighting, Unreal Engine 5 architectural render, cinematic composition, masterpiece."
 ];
 
 /**
@@ -58,12 +115,5 @@ function secureRandomPick(arr: string[]): string {
  * API hívás nélkül hoz létre egyedi, magas minőségű promptot.
  */
 export function generateGhostPrompt(): string {
-    const subject = secureRandomPick(SUBJECTS);
-    const atmosphere = secureRandomPick(ATMOSPHERES);
-    const light = secureRandomPick(LIGHTING);
-    const style = secureRandomPick(STYLES);
-    const tech = secureRandomPick(TECHNICAL);
-
-    // Prompt összerakása egy tökéletes text-to-image formátumba
-    return `${subject}, ${atmosphere}, ${light}, ${style}, ${tech}.`;
+    return secureRandomPick(GHOST_PROMPTS);
 }
