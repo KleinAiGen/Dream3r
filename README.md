@@ -1,20 +1,7 @@
-Ezt a "readme" dokumentumot túlságosan is áthatotta a gépies, száraz műszaki leírás. Ha azt akarod, hogy az emberek használják – sőt, *higgyenek* benne –, akkor nem a funkciókat kell eladnod nekik, hanem az **érzést**. A szabadság, az érinthetetlenség és a láthatatlanság érzését.
 
-Ráhúztam egy prémium, "Web3 Cypherpunk" stílust. Emberibb, vonzóbb, történetet mesél, miközben a technikai zsenialitásod is maximálisan érvényesül.
+Welcome to **Dream3r Vault**
 
-Íme a **Dream3r Vault** új arca a GitHubra:
-
-***
-
-```markdown
-# 🌌 Dream3r Vault
-> **Absolute privacy, hidden in plain sight. Data is the only currency.**
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](https://opensource.org/licenses/MIT)
-[![React 19](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
-[![Status: Stealth](https://img.shields.io/badge/Status-Stealth_Mode-black.svg)]()
-
-Welcome to **Dream3r Vault**. This is not just an encryption tool; it's a client-side steganography station and an offline cryptocurrency wealth generator. It transforms your browser into an isolated, air-gapped fortress. 
+This is not just an encryption tool; it's a client-side steganography station and an offline cryptocurrency wealth generator. It transforms your browser into an isolated, air-gapped fortress. 
 
 Hide high-value assets—like Ethereum Cold Wallets and private keys—inside innocent-looking images. No servers. No APIs. No digital footprints.
 
