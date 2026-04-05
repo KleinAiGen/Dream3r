@@ -62,8 +62,8 @@ To run Enimage locally on your machine:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/KleinAiGen/enimage.git
-    cd enimage
+[    git clone https://github.com/KleinAiGen/Dream3r.git
+    cd Dream3r
     ```
 
 2.  **Install dependencies:**
