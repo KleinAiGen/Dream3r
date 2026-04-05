@@ -6,7 +6,7 @@ try it Online. https://enimage-453802249890.us-west1.run.app/
 |---------------------|--------------------|
 | ![Image 3](src/enimage_artifact.png) | ![Image 4](src/secure_image(1).png) |
 
-> *The matrix is yours to command. Data is the only currency that matters.*
+> *All 4 images contain an encrypted secret Ethereum address and its corresponding private key encrypted offline. I can store any text or document or secret securely online.*
 
 **Enimage** by **H O G O L Y O   I.N.C.** 
 
