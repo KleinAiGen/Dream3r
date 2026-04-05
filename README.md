@@ -1,77 +1,102 @@
+# Enimage 🛡️
 
-Welcome to **Dream3r Vault**
+> *The matrix is yours to command. Data is the only currency that matters.*
 
-This is not just an encryption tool; it's a client-side steganography station and an offline cryptocurrency wealth generator. It transforms your browser into an isolated, air-gapped fortress. 
-
-Hide high-value assets—like Ethereum Cold Wallets and private keys—inside innocent-looking images. No servers. No APIs. No digital footprints.
-
----
-
-### 👁️ The Philosophy: Plausible Deniability
-Standard encryption leaves a locked door. It tells the world: *"I have something valuable in here."* 
-Dream3r Vault operates differently. We don't build locked doors; we make the door disappear. If an adversary inspects your files, they won't find an encrypted vault—they will only see a beautiful, ordinary image. 
+**Enimage** by **H O G O L Y O   I.N.C.** is a high-security, **Zero-Knowledge** client-side steganography and cryptography station. It transforms your browser into an isolated fortress, allowing you to secure, hide, and manage high-value assets (**Ethereum Cold Wallets**, private keys) without ever exposing data to external servers.
 
 ---
 
-### 🚀 Why Dream3r is Revolutionary
-
-*   🤫 **True Zero-Knowledge Architecture**  
-    Everything happens in your machine's RAM. Encryption, steganography, and wallet generation occur strictly locally. There is no backend, no database, and no server-side logging. **If you unplug your internet, Dream3r still works.**
-*   🧩 **Anti-Forensic "Scatter" Protocol**  
-    Traditional steganography writes data sequentially, which is easily detected by basic statistical analysis (Chi-square tests). Dream3r uses a deterministic Pseudo-Random Number Generator (PRNG) to scatter your encrypted data chaotically across millions of pixels. To an analyst, your data just looks like natural camera sensor noise.
-*   💰 **Air-Gapped ETH Cold Wallet Generator**  
-    Generate Ethereum Private Keys and Public Addresses using your browser's native, military-grade entropy (`window.crypto`). Become your own Swiss bank account in a single click.
-*   👻 **The Ghost Prompt Engine**  
-    Generating cover images via AI leaves an API trail. Dream3r uses an offline, procedural matrix to generate millions of unique, surreal image prompts locally. You dictate the terms, the AI just renders.
+## 🏷️ Tags
+`#ETH` `#ColdWallet` `#Cryptography` `#Steganography` `#ZeroKnowledge` `#Hogolyo` `#Privacy` `#Web3` `#Security`
 
 ---
 
-### 🛠️ The Tech Arsenal
+## 🚀 Why Enimage is Revolutionary
 
-*   **Frontend:** React 19 + Vite (Blazing fast, component-driven UI)
-*   **Aesthetic:** Tailwind CSS (Premium Hacker Dark / Glassmorphism UI)
-*   **Cryptography:** Web Crypto API (`window.crypto.subtle`) & ethers.js
-*   **Steganography Engine:** HTML5 Canvas API (Raw byte/pixel manipulation)
+Unlike standard encryption tools, Enimage operates on the principle of **Plausible Deniability**.
 
----
-
-### 📥 Initialization (Quick Start)
-
-Deploy the fortress locally on your own machine. 
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/KleinAiGen/dream3r-vault.git
-cd dream3r-vault
-
-# 2. Install dependencies
-npm install
-
-# 3. Setup Environment (Optional, for AI Cover Generation only)
-# Create a .env file and add your Gemini API key:
-echo "VITE_GEMINI_API_KEY=your_api_key_here" > .env
-
-# 4. Launch the local station
-npm run dev
-```
-*The vault will be live at `http://localhost:3000`. We recommend running it in a private/incognito window.*
+*   **Zero-Knowledge Architecture:** All operations (encryption, wallet generation, steganography) occur strictly in your browser's memory. No API calls, no server-side logging, no data leaks.
+*   **Anti-Forensic Scatter Protocol:** Traditional steganography is sequential and easily detectable by statistical analysis (Chi-square tests). Enimage uses a **cryptographically secure PRNG (Scatter Protocol)** to scatter encrypted data across the image, making it indistinguishable from natural sensor noise.
+*   **ETH Cold Wallet Generator:** Generate Ethereum Private Keys and Public Addresses using native browser entropy (`window.crypto`) and the `ethers` library. Your keys never touch the internet.
+*   **Ghost Prompt Engine:** Procedural, offline prompt generation for AI-assisted image creation, ensuring your cover images are unique and non-profileable.
 
 ---
 
-### 🔐 Security & OPSEC Disclaimer
+## 🔐 Core Features
 
-Dream3r Vault is a powerful tool designed for high-value digital asset management. **With true sovereignty comes absolute responsibility.**
-
-1.  **Remember Your Password:** There is no "Forgot Password" button. If you lose the AES-256 master key, your hidden data is mathematically unrecoverable. Forever.
-2.  **Keep the Original Image:** The image generated/downloaded by Dream3r is the physical container of your wealth. Do not alter it, compress it via social media (which strips LSB data), or convert it to JPEG. Keep it as a lossless PNG.
-3.  **Local Security:** The security of this vault is only as strong as the machine it runs on. Ensure your OS is free of malware or keyloggers before generating cold wallets.
+| Feature | Description |
+| :--- | :--- |
+| **AES-256-GCM** | Military-grade authenticated encryption. |
+| **Scatter Protocol** | Anti-forensic pixel scattering to defeat statistical analysis. |
+| **ETH Generator** | Offline Ethereum wallet generation (Address + Private Key). |
+| **Plausible Deniability** | Hide your secrets in plain sight within innocent images. |
+| **Panic Button** | Instant memory wipe of all sensitive data. |
 
 ---
 
-### 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. You are free to fork, modify, and distribute.
+## 🛠️ Tech Stack
 
-***Built for those who value absolute digital sovereignty.***  
-*Control is an illusion.*
-```
+*   **Frontend:** React 19 + Vite
+*   **Styling:** Tailwind CSS (Premium Hacker Dark UI)
+*   **Crypto:** Web Crypto API (`window.crypto.subtle`) & `ethers.js`
+*   **Steganography:** HTML5 Canvas API
 
+---
+
+## 📥 Installation & Setup
+
+To run Enimage locally on your machine:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/enimage.git
+    cd enimage
+    ```
+
+2.  **Install dependencies:**
+    Make sure you have [Node.js](https://nodejs.org/) installed.
+    ```bash
+    npm install
+    ```
+
+3.  **Environment Variables:**
+    Create a `.env` file in the root directory if you plan to use AI features (optional for core steganography):
+    ```env
+    GEMINI_API_KEY=your_api_key_here
+    ```
+
+4.  **Run in development mode:**
+    ```bash
+    npm run dev
+    ```
+    The app will be available at `http://localhost:3000`.
+
+5.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+    The production-ready files will be in the `dist/` folder.
+
+---
+
+## 🛡️ Security Disclaimer
+
+Enimage is a powerful tool for high-value asset management. **Use at your own risk.**
+*   Always keep your encryption passwords and Ethereum private keys in a secure, offline location.
+*   The security of your data depends entirely on the strength of your password and the security of your local machine.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌟 Acknowledgments
+
+Built for those who value absolute digital sovereignty.
+
+<div align="center">
+  <sub>Built with 🖤 by Hogolyo I.N.C.</sub>
+</div>

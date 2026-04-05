@@ -1,5 +1,5 @@
 {
-  "name": "Zero-Knowledge Steganography",
-  "description": "A client-side, zero-knowledge steganography and cryptography tool. Hide encrypted messages inside images using AES-256-GCM and LSB encoding.",
+  "name": "Enimage",
+  "description": "ETH cold wallett picture generator",
   "requestFramePermissions": []
 }
