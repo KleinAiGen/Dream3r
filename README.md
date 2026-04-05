@@ -2,6 +2,10 @@
 
 try it Online. https://enimage-453802249890.us-west1.run.app/
 
+| ![Image 1](src/dream3r_artifact.png) | ![Image 2](src/enimage_artifact(1).png) |
+|---------------------|--------------------|
+| ![Image 3](src/enimage_artifact.png) | ![Image 4](src/secure_image(1).png) |
+
 > *The matrix is yours to command. Data is the only currency that matters.*
 
 **Enimage** by **H O G O L Y O   I.N.C.** 
