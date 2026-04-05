@@ -20,11 +20,6 @@ Why It Matters 🎯
 
 ---
 
-## 🏷️ Tags
-`#ETH` `#ColdWallet` `#Cryptography` `#Steganography` `#ZeroKnowledge` `#Hogolyo` `#Privacy` `#Web3` `#Security`
-
----
-
 ## 🚀 Why Enimage is Revolutionary
 
 Unlike standard encryption tools, Enimage operates on the principle of **Plausible Deniability**.
