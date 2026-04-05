@@ -4,20 +4,22 @@ try it Online. https://enimage-453802249890.us-west1.run.app/
 
 > *The matrix is yours to command. Data is the only currency that matters.*
 
-**Enimage** by **H O G O L Y O   I.N.C.** is a high-security, **Zero-Knowledge** client-side steganography and cryptography station. It transforms your browser into an isolated fortress, allowing you to secure, hide, and manage high-value assets (**Ethereum Cold Wallets**, private keys) without ever exposing data to external servers.
+**Enimage** by **H O G O L Y O   I.N.C.** 
+
+It is a high-security, **Zero-Knowledge** client-side steganography and cryptography station. It transforms your browser into an isolated fortress, allowing you to secure, hide, and manage high-value assets (**Ethereum Cold Wallets**, private keys) without ever exposing data to external servers.
 
 Why It Matters 🎯
 
 ​The Ghost Archive: Store your most sensitive "life-lines"—legal documents, seed phrases, or whistleblowing evidence—inside a meme. To a thief, it’s a picture of a cat; to you, it’s your future.
-​Journalistic Shield: Communicate with sources by exchanging innocent-looking files that bypass automated surveillance filters looking for keywords.
-​Dead Man's Switch: Prepare a digital inheritance. Leave a single image on a family USB drive that contains the keys to your entire estate, hidden from anyone without the password.
+   ​Journalistic Shield: Communicate with sources by exchanging innocent-looking files that bypass automated surveillance filters looking for keywords.
+   ​Dead Man's Switch: Prepare a digital inheritance. Leave a single image on a family USB drive that contains the keys to your entire estate, hidden from anyone without the password.
 
 ​The Protocol 🛠️
 
 ​Isolation: Load the station. Kill your internet connection if you're paranoid (you should be).
-​The Vessel: Select a carrier file (like a high-res .png). This is your camouflage.
+   ​The Vessel: Select a carrier file (like a high-res .png). This is your camouflage.
 ​The Payload: Drop your raw data—private keys, Ethereum cold wallet addresses, or secret coordinates.
-​The Alchemy: The browser’s engine weaves the data into the pixels using AES-256 GCM. No server ever sees your "soul" (the data).
+   ​The Alchemy: The browser’s engine weaves the data into the pixels using AES-256 GCM. No server ever sees your "soul" (the data).
 ​Exfiltration: Download the modified image. Store it in the open. It’s a ghost now.
 
 ---
@@ -60,7 +62,7 @@ To run Enimage locally on your machine:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/enimage.git
+    git clone https://github.com/KleinAiGen/enimage.git
     cd enimage
     ```
 
